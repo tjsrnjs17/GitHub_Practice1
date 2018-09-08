@@ -34,26 +34,6 @@ int main()
 	printf("This program is intended to determine whether this computer is little endian or not.\n\n");
 	printf("Result: ");
 	
-	if(Test_Little_Endian())
-	{
-		printf("This pc is on the little endian.\n");
-	}
-	else
-	{
-		printf("This pc is on the big endian.\n");
-	}
-	getchar();
 	return 0;
 }
 
-int Test_Little_Endian()
-{
-   int num = 0x00FF;
-   int i = 0;
-   for(i = 0; i<2; i++)
-   {
-	   printf("%p : ", &num +i);
-	   printf("%x \n", *((unsigned char *)&num +i));
-   }
-   return (*((unsigned char*)&num) == 0xFF);	
-}
